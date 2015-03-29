@@ -40,13 +40,15 @@ void draw() {
     float aoty = (sensors[1]*PI)/180;
     float aotz = (sensors[2]*PI)/180;
     //float roty = 0;
-    
-    background(1);
+    translate(0, 20, 0);
+    background(255);
     stroke(0, 0, 200);
     //line (0,20,420,20); // monitor bar
-    fill(255);
-    textSize(10);
-    text (" G: X(" + rotx +")"+" Y("+roty+")"+" Z("+rotz+") || A: X(" + aotx +")"+" Y("+aoty+")"+" Z("+aotz+")", 0,10);
+    fill(0);
+    textSize(20);
+    text (" G: X(" + rotx +")"+" Y("+roty+")"+" Z("+rotz+")", 0,10);
+    translate(0, 20, 0);
+    text (" A: X(" + aotx +")"+" Y("+aoty+")"+" Z("+aotz+")", 0,10);
     fill(0, 0, 200);
      
     translate(210, 220, 0); // center drawing start point in screen
@@ -76,14 +78,15 @@ void rotatingBox(float x, float y,float z){
   rotateY(z);  // rotate drawing coordinates according to user input variables
   rotateZ(y);  //
   strokeWeight(2);
-  stroke(255);
+  stroke(50);
   line(-150, 0, 150, 0);       //
   line(0, 150, 0, -150);       // draw the rotating axis lines
   line(0, 0, -150, 0, 0, 150); //
   strokeWeight(2);
   stroke(255, 0, 0);
-  noFill();
-  box(140);
+  //noFill();
+  
+  box(100);
   rotateX(-x);  //
   rotateY(-z);  // rotate drawing coordinates according to user input variables
   rotateZ(-y);  //
